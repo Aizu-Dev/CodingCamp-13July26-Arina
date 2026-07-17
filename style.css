@@ -1,4 +1,90 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-body {
- background-color: pink;
- 
+body{
+    background:#f4f4f4;
+    color:#333;
+    padding:20px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+header{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+button{
+    padding:8px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#6c63ff;
+    color:white;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+ul{
+    list-style:none;
+}
+
+li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+    margin-top:10px;
+    background:#f9f9f9;
+    border-radius:8px;
+}
+
+.done{
+    text-decoration:line-through;
+    color:gray;
+}
+
+@media(max-width:768px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
