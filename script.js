@@ -52,7 +52,7 @@ function updateTimer(){
 
 updateTimer();
 
-document.getElementById("startBtn").onclick = function(){
+document.getElementById("StartBtn").onclick = function(){
 
     clearInterval(interval);
 
@@ -67,13 +67,13 @@ document.getElementById("startBtn").onclick = function(){
 
 };
 
-document.getElementById("stopBtn").onclick = function(){
+document.getElementById("StopBtn").onclick = function(){
 
     clearInterval(interval);
 
 };
 
-document.getElementById("resetBtn").onclick = function(){
+document.getElementById("ResetBtn").onclick = function(){
 
     clearInterval(interval);
 
@@ -88,27 +88,27 @@ document.getElementById("resetBtn").onclick = function(){
 // To Do List
 // ===========================
 
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let tasks = JSON.parse(localStorage.getItem("Tasks")) || [];
 
-const taskInput = document.getElementById("taskInput");
+const TaskInput = document.getElementById("TaskInput");
 
-const taskList = document.getElementById("taskList");
+const TaskList = document.getElementById("TaskList");
 
-function saveTasks(){
+function SaveTasks(){
 
-    localStorage.setItem("tasks",JSON.stringify(tasks));
+    localStorage.setItem("Tasks",JSON.stringify(Tasks));
 
 }
 
-function renderTasks(){
+function RenderTasks(){
 
     taskList.innerHTML = "";
 
-    tasks.forEach(function(task,index){
+    tasks.forEach(function(Task,index){
 
         let li = document.createElement("li");
 
-        if(task.done){
+        if(Task.done){
             li.classList.add("done");
         }
 
@@ -134,11 +134,11 @@ function renderTasks(){
 
 document.getElementById("addTask").onclick = function(){
 
-    if(taskInput.value.trim() == "") return;
+    if(TaskInput.value.trim() == "") return;
 
     tasks.push({
 
-        text:taskInput.value,
+        text:TaskInput.value,
 
         done:false
 
@@ -154,7 +154,7 @@ document.getElementById("addTask").onclick = function(){
 
 function toggleTask(index){
 
-    tasks[index].done=!tasks[index].done;
+    tasks[index].done=!Tasks[index].done;
 
     saveTasks();
 
@@ -227,11 +227,11 @@ function renderLinks(){
 
 }
 
-document.getElementById("saveLink").onclick = function(){
+document.getElementById("SaveLink").onclick = function(){
 
-    const name = document.getElementById("linkName").value;
+    const name = document.getElementById("LinkName").value;
 
-    const url = document.getElementById("linkURL").value;
+    const url = document.getElementById("LinkURL").value;
 
     if(name=="" || url=="") return;
 
